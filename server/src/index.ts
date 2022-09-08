@@ -3,6 +3,7 @@ import CalcService from './services/calc';
 import CalcController from './controllers/calc';
 import CalcRouter from './routers/calc';
 import express from 'express';
+import cors from 'cors';
 
 async function main() {
 
@@ -16,7 +17,8 @@ async function main() {
             calcRouter
         ],
         middlewares: [
-            express.json()
+            express.json(),
+            cors()
         ]
     });
 

@@ -54,11 +54,13 @@ export default class CalcService implements ICalcService {
                     if (currentPriority > previousPriority) {
                         ops.push(op);
                     } else {
-                        const n2 = numbers.pop()
-                        const n1 = numbers.pop()
-                        const _op = ops.pop()
-                        const result = this.performCalc(_op as SupportedOps, n1 as number, n2 as number);
-                        numbers.push(result);
+                        while(ops.length) {
+                            const n2 = numbers.pop()
+                            const n1 = numbers.pop()
+                            const _op = ops.pop()
+                            const result = this.performCalc(_op as SupportedOps, n1 as number, n2 as number);
+                            numbers.push(result);
+                        }
                         ops.push(op);
                     }
                 }
