@@ -4,7 +4,7 @@
   "main": "build/index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "ts-node-dev --transpile-only --rs --poll --no-deps --exit-child src/index.ts",
+    "dev": "ts-node --transpile-only src/index.ts",
     "build": "tsc",
     "prod": "npm run build && node .",
     "test": "nyc ./node_modules/.bin/_mocha 'test/**/*.test.ts'"

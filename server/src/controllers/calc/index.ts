@@ -10,7 +10,6 @@ export default class CalcController implements ICalcController{
 
     calculate = async (req: Request, res: Response) => {
         try {
-            console.log(req.body)
             const expression = req.body.expression;
             if (!expression) throw new createHttpError.BadRequest("No expression provided!");            
             const result = this.calc.calculate(expression.toString());
